@@ -2,7 +2,7 @@
 
 Sistema de criptografia, decriptografia e hash para **qualquer tipo de arquivo** (binário ou texto).
 Inclui **chave simétrica (AES‑256‑GCM)**, **chave assimétrica (RSA‑4096 + OAEP‑SHA‑256)**, **hash (SHA‑256)**,
-**geração de chaves**, **CLI unificada** e **testes com pytest**.
+**geração de chaves**, **CLI unificada**, **interface web com Streamlit** e **testes com pytest**.
 
 > Extensões de saída exigidas:
 > - `.sim` → saída de criptografia simétrica
@@ -12,13 +12,33 @@ Inclui **chave simétrica (AES‑256‑GCM)**, **chave assimétrica (RSA‑4096 
 ## Requisitos
 
 - Python 3.9+
-- Pacotes: `cryptography>=42.0`, `pytest` (somente para testes)
+- Pacotes: `cryptography>=42.0`, `streamlit>=1.28.0`, `pytest` (somente para testes)
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Como usar (CLI)
+## Como usar
+
+### Interface Web (Streamlit) 🎨
+
+A forma mais fácil de usar o SecureFileKit é através da interface web:
+
+```bash
+streamlit run app.py
+```
+
+A interface oferece:
+- 🔑 Geração de chaves (simétrica e assimétrica)
+- 🔒 Criptografia simétrica com upload de arquivos
+- 🔓 Decriptografia simétrica
+- 🔐 Criptografia assimétrica
+- 🔓 Decriptografia assimétrica
+- 📝 Geração de hash
+
+Todos os arquivos podem ser baixados diretamente pela interface após o processamento.
+
+### CLI (Linha de Comando)
 
 ```bash
 python -m securefilekit --help
